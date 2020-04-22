@@ -51,4 +51,35 @@ def crawl(stock_name):
         i=i+1
 
     return stock+" "+ value + per
-# print(crawl("udow"))
+
+
+
+# crawl_index 구현중...
+def crawl_index():
+    url ="https://kr.investing.com/indices/major-indices"
+    headers = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"}
+    response = requests.get(url,headers=headers)
+
+    if response.status_code != 200:
+        # print("hi")
+        return "request failed"
+    else:
+        pass
+
+    index_list=list()
+
+    source = response.text
+    soup = bs(source, 'html.parser')
+    indexes = soup.select('.genTbl closedTbl elpTbl elp20 crossRatesTbl > tbody > tr')
+
+    for index in indexes:
+        index_name=index.select_one('.bold left plusIconTd noWrap elp > a[title]')
+        if index_name =="나스닥종합지수"
+
+
+    # text=open('./new.html', 'w',-1,"utf-8")
+    # text.write(source)
+    # text.close()
+
+    return source
+

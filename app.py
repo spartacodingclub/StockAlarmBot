@@ -10,8 +10,9 @@ def home():
 
 @app.route('/nations/stocks/<stock_name>', methods=['GET'])
 def get_stock(stock_name):
-    print(crawling.crawl(stock_name))
-    return jsonify({"return":crawling.crawl(stock_name)})
+    # print(crawling.crawl(stock_name))
+    # return jsonify({"return":crawling.crawl(stock_name)})
+    return crawling.crawl(stock_name)
 
 if __name__ == '__main__':
-    app.run()
+    app.run('0.0.0.0',port=5000,debug=True)
