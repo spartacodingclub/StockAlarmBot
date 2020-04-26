@@ -1,4 +1,4 @@
-importClass(org.jsoup.Jsoup);
+﻿importClass(org.jsoup.Jsoup);
 importPackage(com.dtolabs.rundeck.core.utils.TextUtils);
 const scriptName = "front";
 /**
@@ -12,8 +12,8 @@ const scriptName = "front";
  */
 function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
     //replier.reply("김진환","시작");  
-    // let url="http://13.125.255.233:5000/nations/stocks/";
-    let url = "http://13.125.255.233:5000/nations/";
+    // let url="ip주소/nations/stocks/";
+    let url = "ip주소/nations/";
     let addUrl = ""
     let outMsg ="";
     let stockName = null;
